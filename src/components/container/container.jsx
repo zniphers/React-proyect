@@ -5,7 +5,6 @@ import Container from '@material-ui/core/Container';
 import Header from './header/header';
 import Main from './main/main';
 
-
 export default function SimpleContainer() {
   return (
     <React.Fragment>
