@@ -37,7 +37,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 
 // Dependencias de React-Router
-import ComponenteEnrutador from '../../../Pages/componente-Enrutador';
+import ComponenteEnrutador from '../componente-Enrutador';
 import {Link, BrowserRouter} from "react-router-dom";
 
 
@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(2),
     },
     list:{
-        width: 270,
+        width: 250,
     },
     search: {
         position: 'relative',
@@ -140,12 +140,22 @@ const useStyles = makeStyles((theme) => ({
           width: 'auto',
         },
       },
+    // searchIcon: {
+    //     padding: theme.spacing(0, 2),
+    //     height: '100%',
+    //     position: 'absolute',
+    //     pointerEvents: 'none',
+    //     display: 'flex',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    // },
+
     title: {
       flexGrow: 1,
-      // display: 'none',
-      // [theme.breakpoints.up('sm')]: {
-      //   display: 'block',
-      // },
+      display: 'none',
+      [theme.breakpoints.up('sm')]: {
+        display: 'block',
+      },
     },
   }));
 
@@ -193,8 +203,21 @@ export default function Header(){
 
             <Divider />
             <List>
+            {['Todas', 'Hoy', 'Próxima semana', 'Completadas'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index === 0 ? <ListIcon /> : 
+                index === 1 ? <TodayIcon /> :
+                index === 2 ? <DateRangeIcon /> :
+                <EventAvailableIcon />}
+                
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+            <List>
             <BrowserRouter>
-              <Link to="/Home">
+              <Link to="/holaquehace">
                 <ListItem>
                   <ListItemIcon>
                       <InboxIcon />
@@ -202,20 +225,20 @@ export default function Header(){
                   <ListItemText primary="Home" />
                 </ListItem>
               </Link>
-              <Link to="/Proyecto-to-do">
+              <Link to="/segundaparte">
               <ListItem>
                   <ListItemIcon>
                       <InboxIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Proyecto To-Do" />
+                  <ListItemText primary="Segundo" />
                 </ListItem>
               </Link>
-              <Link to="/Poyecto-Panel-Tarjetas">
+              <Link to="/terceraparte">
               <ListItem>
                   <ListItemIcon>
                       <InboxIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Proyecto Panel Tarjetas" />
+                  <ListItemText primary="Tercero" />
                 </ListItem>
               </Link>
             </BrowserRouter>
@@ -272,8 +295,34 @@ export default function Header(){
                     ))}
 
                 <Typography variant="h6" className={classes.title}>
-                    Menu Principal
-                </Typography>                
+                    News
+                </Typography>
+                <div className={classes.search}>
+                {/* <div className={classes.searchIcon}>
+                        <SearchIcon />
+                    </div> */}
+
+                    <InputBase
+                        placeholder="Nombre"
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
+                <div className={classes.search}>
+                    <InputBase
+                        placeholder="Email"
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
+                <Button color="inherit">Login</Button>
+                
                 </Toolbar>
             </AppBar>
         </Container>

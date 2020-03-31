@@ -36,11 +36,6 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 
-// Dependencias de React-Router
-import ComponenteEnrutador from '../../../Pages/componente-Enrutador';
-import {Link, BrowserRouter} from "react-router-dom";
-
-
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -123,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(2),
     },
     list:{
-        width: 270,
+        width: 250,
     },
     search: {
         position: 'relative',
@@ -140,12 +135,22 @@ const useStyles = makeStyles((theme) => ({
           width: 'auto',
         },
       },
+    // searchIcon: {
+    //     padding: theme.spacing(0, 2),
+    //     height: '100%',
+    //     position: 'absolute',
+    //     pointerEvents: 'none',
+    //     display: 'flex',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    // },
+
     title: {
       flexGrow: 1,
-      // display: 'none',
-      // [theme.breakpoints.up('sm')]: {
-      //   display: 'block',
-      // },
+      display: 'none',
+      [theme.breakpoints.up('sm')]: {
+        display: 'block',
+      },
     },
   }));
 
@@ -193,33 +198,31 @@ export default function Header(){
 
             <Divider />
             <List>
-            <BrowserRouter>
-              <Link to="/Home">
-                <ListItem>
-                  <ListItemIcon>
-                      <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Home" />
-                </ListItem>
-              </Link>
-              <Link to="/Proyecto-to-do">
-              <ListItem>
-                  <ListItemIcon>
-                      <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Proyecto To-Do" />
-                </ListItem>
-              </Link>
-              <Link to="/Poyecto-Panel-Tarjetas">
-              <ListItem>
-                  <ListItemIcon>
-                      <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Proyecto Panel Tarjetas" />
-                </ListItem>
-              </Link>
-            </BrowserRouter>
-            </List>
+            {['Todas', 'Hoy', 'Próxima semana', 'Completadas'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index === 0 ? <ListIcon /> : 
+                index === 1 ? <TodayIcon /> :
+                index === 2 ? <DateRangeIcon /> :
+                <EventAvailableIcon />}
+                
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+
+          <Divider />
+
+          <List>
+            {['Todas', 'Hoy', 'Próxima semana', 'Completadas'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <ListIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+                <Divider />
+              </ListItem>
+            ))}
+          </List>
+          
           <Divider />
           
         <List 
@@ -272,8 +275,34 @@ export default function Header(){
                     ))}
 
                 <Typography variant="h6" className={classes.title}>
-                    Menu Principal
-                </Typography>                
+                    News
+                </Typography>
+                <div className={classes.search}>
+                {/* <div className={classes.searchIcon}>
+                        <SearchIcon />
+                    </div> */}
+
+                    <InputBase
+                        placeholder="Nombre"
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
+                <div className={classes.search}>
+                    <InputBase
+                        placeholder="Email"
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
+                <Button color="inherit">Login</Button>
+                
                 </Toolbar>
             </AppBar>
         </Container>

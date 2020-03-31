@@ -4,21 +4,13 @@ import Container from './components/container/container';
 
 
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state= {
+function App() {
 
-    }
-  }
-
-  render(){
     return(
       <section className="seccion">
         <Container />
       </section>
     )
-  }
 }
 
 

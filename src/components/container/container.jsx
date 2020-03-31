@@ -6,15 +6,16 @@ import Header from './header/header';
 import Main from './main/main';
 
 // Dependencias de React-Router
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-// Importacion de paginas
-import Home from '../.././Pages/home/home-page';
-import About from '../.././Pages/about/about-page';
+import ComponenteEnrutador from '../../Pages/componente-Enrutador';
+import {Link, BrowserRouter} from "react-router-dom";
+
+// Otras dependencias
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+
+
 
 
 export default function SimpleContainer() {
@@ -25,25 +26,9 @@ export default function SimpleContainer() {
         <Typography component="div" style={{ color: 'white', backgroundColor: '#000020', height: '100vh' }} >
             <Header />
             <Main />
-            <Router>
-              <div>
-                <nav>
-                  <Link to="/">Home</Link>
-                  <Link to="/about">About</Link>
-                </nav>
-
-                {/* A <Switch> looks through its children <Route>s and
-                    renders the first one that matches the current URL. */}
-                <Switch>
-                  <Route path="/about">
-                    <About />
-                  </Route>
-                  <Route path="/">
-                    <Home />
-                  </Route>
-                </Switch>
-              </div>
-            </Router>
+            <BrowserRouter>
+              <ComponenteEnrutador />
+            </BrowserRouter>
         </Typography>
       </Container>
     </React.Fragment>
