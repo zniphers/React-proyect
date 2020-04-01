@@ -21,18 +21,23 @@ import Home from '../Pages/Home/home-pages';
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-                <Route path="/Home">
+                <Route exact path="/">
                     <Home />
-                    </Route>
+                </Route>
+                <Route exact path="/Home">
+                    <Home />
+                </Route>
                 <Route path="/Proyecto-to-do">
                     <ToDoAplicacionPage />
                 </Route>
                 <Route path="/Poyecto-Panel-Tarjetas">
                     <PanelTarjetasPage />
-                    <h1>tercero</h1>
                 </Route>
-                <Route>
-                    <h1>Error 404</h1>
+                <Route >
+                    <div style={{display:'flex', flexDirection:"column",justifyContent:"center", alignItems:"center", paddingTop:250}}>
+                    <h1 style={{color: "yellow"}}>Error 404</h1>
+                    <a href="./" style={{textDecoration:"none", color:"white", fontSize:40}}>Press <span style={{color:"blue"}}>Home</span></a>
+                    </div>
                 </Route>
             </Switch>
             </div>

@@ -2,8 +2,6 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Header from './header/header';
-import Main from './main/main';
 
 // Dependencias de React-Router
 import ComponenteEnrutador from '../../Pages/componente-Enrutador';
@@ -24,11 +22,7 @@ export default function SimpleContainer() {
       <CssBaseline />
       <Container maxWidth="xl" disableGutters='true'>
         <Typography component="div" style={{ color: 'white', backgroundColor: '#000020', height: '100vh' }} >
-            <Header />
-            <Main />
-            <BrowserRouter>
-              <ComponenteEnrutador />
-            </BrowserRouter>
+            <ComponenteEnrutador />
         </Typography>
       </Container>
     </React.Fragment>

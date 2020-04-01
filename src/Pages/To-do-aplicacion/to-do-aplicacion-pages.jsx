@@ -14,12 +14,14 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import ListIcon from '@material-ui/icons/List';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import TodayIcon from '@material-ui/icons/Today';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import HomeWorkOutlinedIcon from '@material-ui/icons/HomeWorkOutlined';
+import FormatListBulletedOutlinedIcon from '@material-ui/icons/FormatListBulletedOutlined';
+import ViewModuleOutlinedIcon from '@material-ui/icons/ViewModuleOutlined';
 
 //Dependencias drawer 
 import clsx from 'clsx';
@@ -37,7 +39,6 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 
 // Dependencias de React-Router
-import ComponenteEnrutador from '../componente-Enrutador';
 import {Link, BrowserRouter} from "react-router-dom";
 
 
@@ -193,15 +194,44 @@ export default function Header(){
           onKeyDown={toggleDrawer(anchor, false)}
         >
 
-            <List>
-            {['Menu'].map((text, index) => (
-              <ListItem text key={text}>
-                <ListItemText primary={text} />
+          <List >
+              <ListItem alignItems= 'center' disabled= "false" >
+                <ListItemText primary="Menu" />
               </ListItem>
-            ))}
           </List>
 
             <Divider />
+            <List>
+            
+              <Link to="/Home" style={{ color: "Black", textDecoration: "none"}}>
+                <ListItem>
+                  <ListItemIcon>
+                      <HomeWorkOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Home" />
+                </ListItem>
+              </Link>
+              <Link to="/Proyecto-to-do" style={{ color: "Black", textDecoration: "none"}}>
+              <ListItem>
+                  <ListItemIcon>
+                      <FormatListBulletedOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Proyecto To-Do" />
+                </ListItem>
+              </Link>
+              <Link to="/Poyecto-Panel-Tarjetas" style={{ color: "Black", textDecoration: "none"}}>
+              <ListItem>
+                  <ListItemIcon>
+                      <ViewModuleOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Proyecto Panel Tarjetas" />
+                </ListItem>
+              </Link>
+            
+            </List>
+          
+          <Divider />
+
             <List>
             {['Todas', 'Hoy', 'Próxima semana', 'Completadas'].map((text, index) => (
               <ListItem button key={text}>
@@ -215,35 +245,6 @@ export default function Header(){
               </ListItem>
             ))}
           </List>
-            <List>
-            <BrowserRouter>
-              <Link to="/holaquehace">
-                <ListItem>
-                  <ListItemIcon>
-                      <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Home" />
-                </ListItem>
-              </Link>
-              <Link to="/segundaparte">
-              <ListItem>
-                  <ListItemIcon>
-                      <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Segundo" />
-                </ListItem>
-              </Link>
-              <Link to="/terceraparte">
-              <ListItem>
-                  <ListItemIcon>
-                      <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Tercero" />
-                </ListItem>
-              </Link>
-            </BrowserRouter>
-            </List>
-          <Divider />
           
         <List 
                   component="nav"
@@ -295,34 +296,9 @@ export default function Header(){
                     ))}
 
                 <Typography variant="h6" className={classes.title}>
-                    News
+                    Aplicacion de tareas To-Do List
                 </Typography>
-                <div className={classes.search}>
-                {/* <div className={classes.searchIcon}>
-                        <SearchIcon />
-                    </div> */}
 
-                    <InputBase
-                        placeholder="Nombre"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </div>
-                <div className={classes.search}>
-                    <InputBase
-                        placeholder="Email"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </div>
-                <Button color="inherit">Login</Button>
-                
                 </Toolbar>
             </AppBar>
         </Container>
