@@ -22,6 +22,7 @@ import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import HomeWorkOutlinedIcon from '@material-ui/icons/HomeWorkOutlined';
 import FormatListBulletedOutlinedIcon from '@material-ui/icons/FormatListBulletedOutlined';
 import ViewModuleOutlinedIcon from '@material-ui/icons/ViewModuleOutlined';
+import ListAltOutlinedIcon from '@material-ui/icons/ListAltOutlined';
 
 //Dependencias drawer 
 import clsx from 'clsx';
@@ -42,7 +43,7 @@ import StarBorder from '@material-ui/icons/StarBorder';
 import {Link, BrowserRouter} from "react-router-dom";
 
 //Dependencias Alert
-import Alert from '@material-ui/lab/Alert';
+// import Alert from '@material-ui/lab/Alert';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -198,7 +199,7 @@ export default function Header(){
 
           <List >
               <ListItem alignItems= 'center' disabled= "false" >
-                <ListItemText primary="Menu" />
+                <ListItemText primary="Menu Principal" />
               </ListItem>
           </List>
 
@@ -229,66 +230,31 @@ export default function Header(){
                   <ListItemText primary="Proyecto Panel Tarjetas" />
                 </ListItem>
               </Link>
-            
+              <Link to="/Datasheet" style={{ color: "Black", textDecoration: "none"}}>
+              <ListItem>
+                  <ListItemIcon>
+                      <ListAltOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Datasheet" />
+                </ListItem>
+              </Link>
+
             </List>
           
           <Divider />
 
-            <List>
-            {['Todas', 'Hoy', 'Próxima semana', 'Completadas'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index === 0 ? <ListIcon /> : 
-                index === 1 ? <TodayIcon /> :
-                index === 2 ? <DateRangeIcon /> :
-                <EventAvailableIcon />}
-                
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          
-        <List 
-                  component="nav"
-                  aria-labelledby="nested-list-subheader"
-                  subheader={
-                    <ListSubheader component="div" id="nested-list-subheader">
-                      Nested List Items
-                    </ListSubheader>
-                  }
-                  className={classes.root}
-        >      
-            <ListItem button onClick={handleClick}>
-                <ListItemIcon>
-                    <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-                    {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                    <ListItem button className={classes.nested}>
-                        <ListItemIcon>
-                            <StarBorder />
-                        </ListItemIcon>
-                        <ListItemText primary="Starred" />
-                    </ListItem>
-                </List>
-            </Collapse>
-        </List>
-
         </div>
       );
     
-    const alerta = () =>{
-      <div>
-      <Alert severity="info">This is an info alert — check it out!</Alert>
-      </div>
-    }
+    // const alerta = () =>{
+    //   <div>
+    //   <Alert severity="info">This is an info alert — check it out!</Alert>
+    //   </div>
+    // }
 
     return(
         <Container noGutters="true" fluid="true" >
-            <AppBar position="static">
+            <AppBar position="static" style={{backgroundColor:"#e67e22"}}>
                 <Toolbar>
                     {['left'].map((anchor) => (
                         <React.Fragment key={anchor}>
@@ -303,7 +269,7 @@ export default function Header(){
                     ))}
 
                 <Typography variant="h6" className={classes.title}>
-                    News
+                    Proyecto Panel de tarjetas
                 </Typography>
                 <div className={classes.search}>
                 {/* <div className={classes.searchIcon}>
@@ -329,7 +295,7 @@ export default function Header(){
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </div>
-                <Button onClick={alerta()} color="inherit">Agregar Tarjeta</Button>
+                <Button color="inherit">Agregar Tarjeta</Button>
                 
                 </Toolbar>
             </AppBar>

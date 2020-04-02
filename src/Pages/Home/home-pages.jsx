@@ -18,6 +18,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeWorkOutlinedIcon from '@material-ui/icons/HomeWorkOutlined';
 import FormatListBulletedOutlinedIcon from '@material-ui/icons/FormatListBulletedOutlined';
 import ViewModuleOutlinedIcon from '@material-ui/icons/ViewModuleOutlined';
+import ListAltOutlinedIcon from '@material-ui/icons/ListAltOutlined';
 
 //Dependencias drawer 
 import clsx from 'clsx';
@@ -36,6 +37,9 @@ import StarBorder from '@material-ui/icons/StarBorder';
 
 // Dependencias de React-Router
 import {Link, BrowserRouter} from "react-router-dom";
+
+//Dependencias componentes contenido para la pagina
+import ContenidoPesonal from './Contenido-personal/contenido-personal';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -181,7 +185,7 @@ export default function Header(){
 
             <List >
               <ListItem alignItems= 'center' disabled= "false" >
-                <ListItemText primary="Menu" />
+                <ListItemText primary="Menu Principal" />
               </ListItem>
           </List>
 
@@ -212,7 +216,15 @@ export default function Header(){
                   <ListItemText primary="Proyecto Panel Tarjetas" />
                 </ListItem>
               </Link>
-            
+              <Link to="/Datasheet" style={{ color: "Black", textDecoration: "none"}}>
+              <ListItem>
+                  <ListItemIcon>
+                      <ListAltOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Datasheet" />
+                </ListItem>
+              </Link>
+
             </List>
           <Divider />
           
@@ -224,7 +236,7 @@ export default function Header(){
 
     return(
         <Container noGutters="true" fluid="true" >
-            <AppBar position="static">
+            <AppBar position="static" style={{backgroundColor: '#3498db'}}>
                 <Toolbar>
                     {['left'].map((anchor) => (
                         <React.Fragment key={anchor}>
@@ -243,6 +255,7 @@ export default function Header(){
                 </Typography>                
                 </Toolbar>
             </AppBar>
+            <ContenidoPesonal />
         </Container>
     );
 }

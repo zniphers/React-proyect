@@ -21,10 +21,10 @@ export default function SimpleContainer() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="xl" disableGutters='true'>
-        <Typography component="div" style={{ color: 'white', backgroundColor: '#000020', height: '100vh' }} >
+        <Typography component="div" style={{ color: 'white', backgroundColor: 'rgb(240, 240, 240)', height: '100vh' }} >
             <ComponenteEnrutador />
         </Typography>
       </Container>
     </React.Fragment>
   );
-}
+} 

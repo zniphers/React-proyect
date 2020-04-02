@@ -9,6 +9,9 @@ import {
 import ToDoAplicacionPage from './To-do-aplicacion/to-do-aplicacion-pages';
 import PanelTarjetasPage from './Panel-tarjetas/panel-tarjetas-pages';
 import Home from '../Pages/Home/home-pages';
+import Datasheet from '../Pages/Apuntes-Datasheet/Apuntes-Datasheet'
+import './estilos-todas-las-pages.css';
+
 
   export default function funcionEnrutador(){
       return(
@@ -33,10 +36,15 @@ import Home from '../Pages/Home/home-pages';
                 <Route path="/Poyecto-Panel-Tarjetas">
                     <PanelTarjetasPage />
                 </Route>
+                <Route path="/Datasheet">
+                    <Datasheet />
+                </Route>
                 <Route >
                     <div style={{display:'flex', flexDirection:"column",justifyContent:"center", alignItems:"center", paddingTop:250}}>
-                    <h1 style={{color: "yellow"}}>Error 404</h1>
-                    <a href="./" style={{textDecoration:"none", color:"white", fontSize:40}}>Press <span style={{color:"blue"}}>Home</span></a>
+                        <div style={{backgroundColor: "gray", padding:"40px", borderRadius:"20px", border:"solid 2px blue"}}>
+                        <h1 style={{color: "yellow"}}>Error 404</h1>
+                        <a href="./" style={{textDecoration:"none", color:"white", fontSize:40}}>Press <span style={{color:"blue"}}>Home</span></a>
+                        </div>
                     </div>
                 </Route>
             </Switch>
