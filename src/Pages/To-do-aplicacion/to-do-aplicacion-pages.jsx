@@ -154,10 +154,10 @@ const useStyles = makeStyles((theme) => ({
 
     title: {
       flexGrow: 1,
-      display: 'none',
-      [theme.breakpoints.up('sm')]: {
+      //display: 'none',
+      //[theme.breakpoints.up('sm')]: {
         display: 'block',
-      },
+      //},
     },
   }));
 
@@ -282,7 +282,7 @@ export default function Header(){
                     ))}
 
                 <Typography variant="h6" className={classes.title}>
-                    Aplicacion de tareas To-Do List
+                    Aplicación To-Do List
                 </Typography>
 
                 </Toolbar>

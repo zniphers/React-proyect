@@ -23,6 +23,7 @@ import HomeWorkOutlinedIcon from '@material-ui/icons/HomeWorkOutlined';
 import FormatListBulletedOutlinedIcon from '@material-ui/icons/FormatListBulletedOutlined';
 import ViewModuleOutlinedIcon from '@material-ui/icons/ViewModuleOutlined';
 import ListAltOutlinedIcon from '@material-ui/icons/ListAltOutlined';
+import AddIcon from '@material-ui/icons/Add';
 
 //Dependencias drawer 
 import clsx from 'clsx';
@@ -295,7 +296,9 @@ export default function Header(){
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </div>
-                <Button color="inherit">Agregar Tarjeta</Button>
+                <Button color="inherit">
+                        <AddIcon style={{border:"solid 1px white", borderRadius:"50%"}}/>
+                </Button>
                 
                 </Toolbar>
             </AppBar>

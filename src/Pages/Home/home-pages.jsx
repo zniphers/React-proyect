@@ -142,10 +142,10 @@ const useStyles = makeStyles((theme) => ({
       },
     title: {
       flexGrow: 1,
-      // display: 'none',
-      // [theme.breakpoints.up('sm')]: {
-      //   display: 'block',
-      // },
+      //display: 'none',
+      //[theme.breakpoints.up('sm')]: {
+       display: 'block',
+      //},
     },
   }));
 
@@ -236,7 +236,9 @@ export default function Header(){
 
     return(
         <Container noGutters="true" fluid="true" >
-            <AppBar position="static" style={{backgroundColor: '#3498db'}}>
+            <AppBar position="static" color="inherit" 
+            style={{backgroundColor: '#3498db'}}
+            >
                 <Toolbar>
                     {['left'].map((anchor) => (
                         <React.Fragment key={anchor}>

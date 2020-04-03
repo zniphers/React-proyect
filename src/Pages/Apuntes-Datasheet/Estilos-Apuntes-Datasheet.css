@@ -236,9 +236,6 @@ footer ul a{
     padding: 0px;
     border: 0px;
 }
-.main{
-    margin: 0px;
-}
 .desplegar{
     display:none;
 }
@@ -250,9 +247,10 @@ footer ul a{
     font-size: 10px;
 } 
 .main{
+    margin: 0px;
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: rgb(43, 43, 43);
 }
 .main h1{
     align-self: center;
