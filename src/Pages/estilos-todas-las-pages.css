@@ -1,0 +1,9 @@
+img{
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(.46,.08,.29,.86);
+    transition-delay: 0s;
+}
+img:hover{
+    transform: scale(1.02);
+}

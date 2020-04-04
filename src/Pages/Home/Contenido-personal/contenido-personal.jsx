@@ -1,25 +1,40 @@
 import React from 'react';
 import {Col, Row} from 'react-bootstrap';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Imagenes 
 import imagenPersona from './Imagenes/banner.png';
 import theFuture from './Imagenes/theFuture.PNG';
 
 //importacion de estilos
-import './contenido-personal-estilos.css';
+import ComponenteSeleccionIrregular from './componente-seleccion-irregular/componente-seleccion-irregular';
+import {ComponenteSeleccionIrregularLlama, ComponenteSeleccionIrregularTierra, 
+    ComponenteSeleccionIrregularAgua, ComponenteSeleccionIrregularViento} 
+    from './componente-seleccion-irregular/componente-seleccion-irregular';
 
+const use = makeStyles((theme) => ({
+    imagenIndicando:{
+      [theme.breakpoints.down('sm')]: {
+            display:'none',
+             },
+    }
+}));
 
 export default function ContenidoPersonal(){
     return(
-        <div>
+        <div style={{marginLeft:"20px", marginRight:"20px", marginTop:"20px"}}>
             <Row style={{display:"flex", flexDirection:"row",  justifyContent:"center"}}>
             <Col style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
-                <img src={theFuture} />
-                <p>lorem</p>
-                <div className="contenido-personal-cuadro">hola como estassafasf</div>
+                <img src={theFuture} alt="imagen de persona apuntando" style={{marginTop: "20px", width : "40%"}}/>
+                    <Row style={{display:"flex", flexDirection:"row",  justifyContent:"center"}}>
+                    <ComponenteSeleccionIrregularLlama Texto={"hola con las llaves que tenia"} />
+                    <ComponenteSeleccionIrregularTierra Texto={"Abri un auto con las llaves que tenia"} />
+                    <ComponenteSeleccionIrregularViento Texto={"Abri un auto con las llaves que tenia"} />
+                    <ComponenteSeleccionIrregularViento Texto={"Abri un auto con las llaves que tenia"} />
+                    </Row>
             </Col>
-            <Col>
-            <img src={imagenPersona} />
+            <Col className={use().imagenIndicando}>
+                <img src={imagenPersona} alt="imagen de persona apuntando"/>
             </Col>
             </Row>
         </div>

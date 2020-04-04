@@ -235,7 +235,7 @@ export default function Header(){
     
 
     return(
-        <Container noGutters="true" fluid="true" >
+        <Container fluid="true" style={{backgroundColor:"rgb(240,240,240)"}}>
             <AppBar position="static" color="inherit" 
             style={{backgroundColor: '#3498db'}}
             >
