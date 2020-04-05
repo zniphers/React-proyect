@@ -1,0 +1,9 @@
+.efectoComponenteConejo{
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(.46,.08,.29,.86);
+    transition-delay: 0s;
+}
+.efectoComponenteConejo:hover{
+    transform: scale(1.5) translateX(25px) skew(4.4deg);
+}

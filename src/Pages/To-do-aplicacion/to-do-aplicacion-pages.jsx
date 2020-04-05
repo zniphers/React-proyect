@@ -264,7 +264,6 @@ export default function Header(){
         </div>
       );
     
-
     return(
         <Container noGutters="true" fluid="true" >
             <AppBar position="static" style={{backgroundColor:"#2ecc71"}}>
@@ -280,11 +279,9 @@ export default function Header(){
                         </Drawer>
                         </React.Fragment>
                     ))}
-
                 <Typography variant="h6" className={classes.title}>
                     Aplicación To-Do List
                 </Typography>
-
                 </Toolbar>
             </AppBar>
         </Container>
