@@ -241,14 +241,14 @@ export default function Header(){
 
             </List>
             <Divider />
-            <List >
+            {/* <List >
     <ListItem alignItems= 'center' disabled= "true" >
       <ListItemText primary="Menu: Aplicacion To-Do" />
     </ListItem>
 </List>
 
-  <Divider />
-  <List>
+  <Divider /> */}
+  {/* <List>
   {['Todas', 'Hoy', 'Próxima semana', 'Completadas'].map((text, index) => (
     <ListItem button key={text}>
       <ListItemIcon>{index === 0 ? <ListIcon /> : 
@@ -260,7 +260,7 @@ export default function Header(){
       <ListItemText primary={text} />
     </ListItem>
   ))}
-</List>
+</List> */}
 
 
         </div>

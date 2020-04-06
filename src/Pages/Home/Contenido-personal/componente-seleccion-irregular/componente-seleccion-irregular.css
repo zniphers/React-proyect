@@ -9,8 +9,8 @@
     transform: skewY(7.5deg) translateY(20px);
 }
 .contenido-personal-contenedor:hover .contenido-personal-contenedor-texto{
-    transform: translate(0%, -72px);
-    font-size: 17px;
+    transform: translate(-20px, -65px);
+    font-size: 1.2rem;
 }
 .contenido-personal-contenedor-figura{
     height: 150px;
@@ -28,7 +28,7 @@
     position: relative;
     color: rgb(255, 255, 255);
     font-family: 'Roboto';
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: bold;
     font-variant: initial;
     font-style: italic;
@@ -37,8 +37,8 @@
     left: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    text-align: center;
-    transform: translate(0%, -70px);
+    text-align: flex-start;
+    transform: translate(-20px, -50px);
     transition-property: all;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(.46,.08,.29,.86);
