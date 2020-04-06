@@ -5,5 +5,5 @@
     transition-delay: 0s;
 }
 .efectoComponenteConejo:hover{
-    transform: scale(1.5) translateX(25px) skew(4.4deg);
+    transform: scale(1.5) translateX(30px);
 }

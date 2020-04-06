@@ -37,7 +37,7 @@ console.log(valor);
                             display:"flex",
                             height:"20px",
                             width:"20px",
-                            backgroundColor:"black",
+                            backgroundColor:"#393e46",
                             border:"solid 2px black"
                           }}/> 
                           :mostrar2 == 0 ?
@@ -46,14 +46,14 @@ console.log(valor);
                             height:"20px",
                             width:"20px",
                             backgroundColor:"white",
-                            border:"solid 2px black"
+                            border:"solid 2px #dfdfdf"
                           }}/>:
                           <div style={{
                             display:"flex",
                             height:"20px",
                             width:"20px",
-                            backgroundColor:"gray",
-                            border:"solid 2px black"
+                            backgroundColor:"#84a9ac",
+                            border:"solid 2px #204051"
                           }}/>
                           )
                       })}

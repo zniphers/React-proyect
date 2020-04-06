@@ -15,7 +15,7 @@ import {ComponenteSeleccionIrregularLlama, ComponenteSeleccionIrregularTierra,
 //importancion de componente conejo
 import ImagenConejo from './componente-conejo/componente-conejo';
 
-const use = makeStyles((theme) => ({
+const useMadeStyle = makeStyles((theme) => ({
     imagenIndicando:{
       [theme.breakpoints.down('sm')]: {
             display:'none',
@@ -35,9 +35,9 @@ export default function ContenidoPersonal(){
                     <ComponenteSeleccionIrregularViento Texto={"Abri un auto con las llaves que tenia"} />
                     <ComponenteSeleccionIrregularAgua Texto={"Abri un auto con las llaves que tenia"} />
                     </Row>
-                <a href="https://www.youtube.com/watch?v=NQNzAkBF4uw"><ImagenConejo /></a>
+                <ImagenConejo style={{display:"block", position:"fixed", left:"20px"}}/>
             </Col>
-            <Col className={use().imagenIndicando}>
+            <Col className={useMadeStyle().imagenIndicando}>
                 <img src={imagenPersona} alt="imagen de persona apuntando"/>
             </Col>
             </Row>

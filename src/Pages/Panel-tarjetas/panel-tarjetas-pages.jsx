@@ -46,6 +46,9 @@ import {Link, BrowserRouter} from "react-router-dom";
 //Dependencias Alert
 // import Alert from '@material-ui/lab/Alert';
 
+//Dependencia Contenido de la pagina principal
+import ContenidoPanelTarjetas from './contenido-Panel-tarjetas/panel-tarjetas-pages-contenido';
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -272,10 +275,10 @@ export default function Header(){
                 <Typography variant="h6" className={classes.title}>
                     Proyecto Panel de tarjetas
                 </Typography>
-                <div className={classes.search}>
-                {/* <div className={classes.searchIcon}>
+                {/* <div className={classes.search}>
+                <div className={classes.searchIcon}>
                         <SearchIcon />
-                    </div> */}
+                    </div>
 
                     <InputBase
                         placeholder="Nombre"
@@ -285,8 +288,8 @@ export default function Header(){
                         }}
                         inputProps={{ 'aria-label': 'search' }}
                     />
-                </div>
-                <div className={classes.search}>
+                </div> */}
+                {/* <div className={classes.search}>
                     <InputBase
                         placeholder="Email"
                         classes={{
@@ -295,13 +298,14 @@ export default function Header(){
                         }}
                         inputProps={{ 'aria-label': 'search' }}
                     />
-                </div>
-                <Button color="inherit">
+                </div> */}
+                {/* <Button color="inherit">
                         <AddIcon style={{border:"solid 1px white", borderRadius:"50%"}}/>
-                </Button>
+                </Button> */}
                 
                 </Toolbar>
             </AppBar>
+            <ContenidoPanelTarjetas />
         </Container>
     );
 }
