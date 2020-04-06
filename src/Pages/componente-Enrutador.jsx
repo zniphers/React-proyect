@@ -33,7 +33,7 @@ import './estilos-todas-las-pages.css';
                 <Route path="/Proyecto-to-do">
                     <ToDoAplicacionPage />
                 </Route>
-                <Route path="/Poyecto-Panel-Tarjetas">
+                <Route path="/Proyecto-Panel-Tarjetas">
                     <PanelTarjetasPage />
                 </Route>
                 <Route path="/Datasheet">

@@ -6,7 +6,7 @@ import CardContainer from './components/card-container/card-container-component'
 import Container from '@material-ui/core/Container';
 
 //Dependencias firestore
-import firestore from './firebase/firebase-config-utils';
+import firestore from '../../../firebase/firebase-config-utils';
 
 export default class contenido extends React.Component{
   constructor(){

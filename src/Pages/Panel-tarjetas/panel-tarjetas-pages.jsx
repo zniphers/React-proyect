@@ -226,7 +226,7 @@ export default function Header(){
                   <ListItemText primary="Proyecto To-Do" />
                 </ListItem>
               </Link>
-              <Link to="/Poyecto-Panel-Tarjetas" style={{ color: "Black", textDecoration: "none"}}>
+              <Link to="/Proyecto-Panel-Tarjetas" style={{ color: "Black", textDecoration: "none"}}>
               <ListItem>
                   <ListItemIcon>
                       <ViewModuleOutlinedIcon />

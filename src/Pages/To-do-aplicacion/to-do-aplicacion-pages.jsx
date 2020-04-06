@@ -42,6 +42,8 @@ import StarBorder from '@material-ui/icons/StarBorder';
 // Dependencias de React-Router
 import {Link, BrowserRouter} from "react-router-dom";
 
+//Dependencias del contenido
+import Contenido from './contenido/to-do-aplicacion-pages-contenido';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -220,7 +222,7 @@ export default function Header(){
                   <ListItemText primary="Proyecto To-Do" />
                 </ListItem>
               </Link>
-              <Link to="/Poyecto-Panel-Tarjetas" style={{ color: "Black", textDecoration: "none"}}>
+              <Link to="/Proyecto-Panel-Tarjetas" style={{ color: "Black", textDecoration: "none"}}>
               <ListItem>
                   <ListItemIcon>
                       <ViewModuleOutlinedIcon />
@@ -284,6 +286,7 @@ export default function Header(){
                 </Typography>
                 </Toolbar>
             </AppBar>
+            <Contenido />
         </Container>
     );
 }
