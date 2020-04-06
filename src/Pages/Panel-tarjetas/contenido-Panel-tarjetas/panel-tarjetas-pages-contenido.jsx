@@ -99,8 +99,60 @@ recibirContactos = () =>{
         let arregloIndices = this.state.personas.map( persona => persona.id);
         let indice = arregloIndices[arregloIndices.length-1] + 1; 
         
+////////////////////////////////////////////////////////////////
+let hoy = new Date();
+let horas = hoy.getHours();
+let minutos = hoy.getMinutes();
+let day = hoy.getDate();
+let month = hoy.getMonth();
+let year = hoy.getFullYear();
+let mesfinal = month;
+let mes = ()=>{switch(mesfinal){
+    case 0:
+        return("Enero");
+        break; 
+    case 1:
+        return("Febrero");
+        break;
+    case 2:
+        return("Marzo");
+        break;
+    case 3:
+        return("Abril");
+        break; 
+    case 4:
+        return("Mayo");
+        break;
+    case 5:
+        return("Junio");
+        break; 
+    case 6:
+        return("Julio");
+        break; 
+    case 7:
+        return("Agosto");
+        break;
+    case 8:
+        return("Octubre");
+        break; 
+    case 9:
+        return("Septiembre");
+        break; 
+    case 10:
+        return("Noviembre");
+        break; 
+    case 11:
+        return("Diciembre");
+        break; 
+    default:
+        return("caso bugueado");
+        break;
+};}
+let horaIngreso =`${day} de ${mes()} del ${year} a las ${horas}:${minutos}`;
+////////////////////////////////////////////////////////////////
+
         personasModificadas.push({
-          "id": indice,
+          "id": horaIngreso,
           "name": this.state.nombre,
           "username": "Bret",
           "email": this.state.email,    
@@ -110,7 +162,7 @@ recibirContactos = () =>{
 
         let contacto = 
         {
-          "id": indice,
+          "id": horaIngreso,
           "name": this.state.nombre,
           "username": "Bret",
           "email": this.state.email,    

@@ -30,8 +30,10 @@ export default function Card(props){
         <Grid item xs={3}>
             <Paper className={`card-flex ${classes.paper}`}>
               <Avatar className={classes.blueColor}>{props.nombre[0]}</Avatar>
-              <p style={{marginTop:"10px"}}>{props.nombre}</p>
-              <p>{props.email}</p>
+              <p style={{marginTop:"10px", marginBottom:"0px"}}>{props.nombre}</p>
+              <p style={{marginTop:"0px", marginBottom:"10px"}}>{props.email}</p>
+              <p style={{marginTop:"10px", marginBottom:"0px"}}>ingresado el:</p>
+              <p style={{marginTop:"0px", marginBottom:"0px"}}>{props.id}</p>
               <IconButton 
                 aria-label="delete"
                 onClick={ (event) => props.funcionBorrarPersona(event, props.id, props.nombre, props.email) }
